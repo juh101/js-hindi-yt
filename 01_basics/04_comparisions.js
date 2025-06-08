@@ -19,3 +19,5 @@ Whereas equality does not
 
 console.log("02" == 2)  //t converts str to int and checks equality
 console.log("2" === 2) //f checks value as well as data type
+
+
