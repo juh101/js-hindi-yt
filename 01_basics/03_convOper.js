@@ -22,7 +22,7 @@
 
 // console.log("checking for null")
 // let num = null
-// let Value= Number(num)
+// let Value= Number(num) //0
 // console.log(Value)
 // console.log(typeof(Value)) //num
 // console.log(isNaN(num)) //false
@@ -33,6 +33,8 @@
 // console.log(Valy) //NaN
 // console.log(typeof(Valy)) //number
 // console.log(isNaN(Valy)) //true
+// console.log(4+NaN); //NaN
+
 
 // if(1){
 //     console.log("checking for boolean")
