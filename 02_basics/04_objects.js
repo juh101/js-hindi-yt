@@ -54,3 +54,17 @@ console.log(Object.values(tinderUser)); //imp
 console.log(Object.entries(tinderUser));  
 console.log(tinderUser.hasOwnProperty('isLoggedIn'));
 
+
+const course = {
+    courseName: "js in hindi",
+    price: "999" , 
+    courseInstructor: "hitesh"
+}
+/* object de-structure 
+Object destructuring is a concise way to extract values from 
+an object and assign them to variables using a short syntax.
+*/
+const {courseInstructor: instructor} = course
+// console.log(courseInstructor); //instructor will be used instead of courseInstructor
+console.log(instructor); 
+
