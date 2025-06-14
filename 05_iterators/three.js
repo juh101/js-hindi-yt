@@ -40,3 +40,7 @@ for (const key of myMap.keys()) {
   //console.log(key);
 }
 
+//using forin loops for map 
+for (const key in myMap) {
+  console.log(key);
+}
