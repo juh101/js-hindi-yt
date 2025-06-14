@@ -31,8 +31,8 @@ myMap.set(1 , Boolean("")) //same value but different key ho sakta hai
 for (const [key, value] of myMap) {
   //console.log(`${key} => ${value}`);
 }
-myMap.forEach((value, key) => {
-  //console.log(`${key} = ${value}`);
+myMap.forEach(function(value, key){
+  console.log(`${key} = ${value}`);
 });
 
 //to iterate over only keys/values
