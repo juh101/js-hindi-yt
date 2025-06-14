@@ -66,7 +66,7 @@ handleObject(user)
 
 //passing array into function
 const myNewArray = [200, 400, 350, 800]
-function returnSecondValue(getarray , number1){
-    return getarray[number1];
-}
+function returnSecondValue(getarray , number1)
+    {return (getarray[number1])}
+
 console.log(returnSecondValue(myNewArray , 4));
