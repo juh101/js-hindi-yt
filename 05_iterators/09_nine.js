@@ -41,7 +41,7 @@ const shoppingCart = [
         price: 12999
     },
 ]
-
+//to get sum
 const totalVal = shoppingCart.reduce(function(acc,item){
     return acc+item.price
 },0);
