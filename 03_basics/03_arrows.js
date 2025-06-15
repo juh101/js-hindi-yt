@@ -45,7 +45,7 @@ user.welcome();
 // writing return is neccessary when using {}
 
 const addTwo = (num1 , num2) => ({username : "juhi"})
-//to return an object uou always need to use ()
+//to return an object you always need to use ()
 
 // console.log(addTwo(4,70));
 
