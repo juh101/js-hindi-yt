@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    
+    div.className = "main"
+    div.id = Math.floor(Math.random() * 10 + 1)
+    div.setAttribute("title" , "generated title")
+    div.style.backgroundColor = 'green'
+    div.style.padding = "12px" 
+    div.style.borderRadius = '15px'
+    // div.innerText = "chai aur code //removes existing content if any and overwrites it
+    const addText = document.createTextNode("chai aur code")
+    div.appendChild(addText) 
+    //Doesn’t remove existing content — it just adds the new text after what's already there.
+    
+    console.log(div);
+    //uptill now the div has been created in memory but not appended in doc
+    document.body.appendChild(div)
+
+    //this entire can be wrapped in a function to create div
+</script>
+</html>
