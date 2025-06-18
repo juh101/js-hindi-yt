@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outer" style="padding: 30px; background-color: lightblue;">
+  Outer Div
+  <div id="middle" style="padding: 30px; background-color: lightgreen;">
+    Middle Div
+    <div id="inner" style="padding: 30px; background-color: lightcoral;">
+      Inner Div (Click me!)
+    </div>
+  </div>
+</div>
+</body>
+<script>
+    function log(message) {
+  console.log(message);
+}
+
+// CAPTURE phase listener (fires top → down)
+// document.getElementById('outer').addEventListener('click', () => log('Outer - Capture'), true);
+document.getElementById('middle').addEventListener('click', () => log('Middle - Capture'), true);
+document.getElementById('inner').addEventListener('click', () => log('Inner - Capture'), true);
+
+// BUBBLE phase listener (fires bottom → up)
+document.getElementById('outer').addEventListener('click', () => log('Outer - Bubble'), false);
+document.getElementById('middle').addEventListener('click', () => log('Middle - Bubble'), false);
+document.getElementById('inner').addEventListener('click', () => log('Inner - Bubble'), false);
+
+</script>"Capture goes down, bubble comes up."
+
+<!-- The event first travels down the DOM (capture phase), 
+ hits the target, then bubbles up the DOM (bubble phase).            
+ 
+Capturing Phase:
+Event travels top → down the DOM (toward the clicked element).
+
+Target Phase:
+Event reaches the clicked element itself.
+
+Bubbling Phase:
+Event travels bottom → up the DOM (back to the top).
+
+Capture → Target → Bubble
+Top down → Clicked → Bottom up -->
+</html>
+
