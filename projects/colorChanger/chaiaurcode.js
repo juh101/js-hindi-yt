@@ -12,3 +12,4 @@ buttons.forEach(function (item) {
     document.body.style.backgroundColor === 'white' ? colorbg : 'white'
   });
 });
+
