@@ -7,7 +7,7 @@
 </head>
 <body style="background-color: #414141; color: aliceblue;">
     <h2>Amazing image</h2>
-    <div >
+    <div>
         <ul id="images">
             <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
             <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
@@ -17,6 +17,9 @@
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
    </div>
+   <div style="text-align: center;">
+   <span id="reload" style="display: inline-block; height: 50px; width: 100px; background-color: rgb(239, 50, 50); color: aliceblue;">get images back</span>
+    </div>
 </body>
 <script>
     // document.getElementById('owl').onclick = function(){
@@ -30,23 +33,44 @@
     // altkey , ctrlkey, shiftkey, keyCode
     // most optimised is-
 
-    document.getElementById('images').addEventListener('click', function(e){
-        console.log("clicked inside the ul");
-        // e.stopPropagation()
-    }, true)
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    //     // e.stopPropagation()
+    // }, true)
     // document.getElementById('images').addEventListener('click', function(e){
     //     console.log("clicked inside the ul");
     //     // e.stopPropagation()
     // }, false)
 
-    document.getElementById('owl').addEventListener('click', function(e){
-        console.log("owl clicked");
-        // e.stopPropagation()
-    }, false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     // e.stopPropagation()
+    // }, false)
     document.getElementById('google').addEventListener('click' , function(e){
         e.preventDefault()
-        e.stopPropagation() //will not make a difference if any of its parent is in capture phase
+        // e.stopPropagation() //will not make a difference if any of its parent is in capture phase
         console.log('google clicked')
+    }, true)
+
+    // to remove an image by clicking on it
+
+    document.querySelector('#images').addEventListener('click' , function(e){
+        console.log(e);
+        console.log(e.target);
+        console.log(e.target.id);
+        console.log(e.target.parentNode);
+        console.log(e.target.tagName);
+        const toRemove = document.getElementById(e.target.id)
+        // const toRemove =e.target.parentNode
+
+        
+        toRemove.remove()
+    } , false)
+
+    // a button to reload the page or get images back
+    document.getElementById('reload').addEventListener('click' , function(e){
+
+        location.reload()
     }, false)
 </script>
 </html>
