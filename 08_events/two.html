@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(0, 10, 39); color: aliceblue;">
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setInterval(function(){
+    //     console.log("hitesh")
+    // } , 2000) //executes every 2s
+
+    const nameis = function(){
+        console.log("hitesh")
+    } 
+    setTimeout(nameis, 2000) //executes 2s into loading the window even when refernce is given
+    
+    const changingtext = function(){
+        document.querySelector('h1').innerHTML = 'Best JS Series'
+    }
+    const changetext = setTimeout(changingtext, 2000)
+    // to stop this(setTimeout) event from happeing we have an option
+    // clearTimeout(changetext) // makes sense to apply this to an event
+
+    document.querySelector('#stop').
+    addEventListener('click' , function(){
+        // setTimeout(changingtext, 2000)
+        clearTimeout(changetext)
+        console.log('stopped')
+    }) //this button can only stop the change from happening
+    //if it is pressed before 2s
+    // and can also work to set timeout when button pressed
+</script>
+</html>
