@@ -22,14 +22,15 @@
     const changingtext = function(){
         document.querySelector('h1').innerHTML = 'Best JS Series'
     }
-    const changetext = setTimeout(changingtext, 2000)
+    
     // to stop this(setTimeout) event from happeing we have an option
     // clearTimeout(changetext) // makes sense to apply this to an event
 
     document.querySelector('#stop').
     addEventListener('click' , function(){
-        // setTimeout(changingtext, 2000)
-        clearTimeout(changetext)
+        const changetext = setTimeout(changingtext, 2000)
+        setTimeout(changingtext, 2000)
+        // clearTimeout(changetext)
         console.log('stopped')
     }) //this button can only stop the change from happening
     //if it is pressed before 2s
