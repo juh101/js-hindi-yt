@@ -20,4 +20,4 @@ stop.addEventListener('click' , function(){
   toremove.remove()
   clearInterval(changingbg)
   changingbg = null
-});
+}); 
