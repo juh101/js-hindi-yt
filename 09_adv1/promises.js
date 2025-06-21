@@ -111,7 +111,7 @@ Promise.all([promise4, promise5])
     console.log("One of them failed:", error);
   });
 
-  const p1 = Promise.resolve("🍎 Apple");
+const p1 = Promise.resolve("🍎 Apple");
 const p2 = Promise.resolve("🍌 Banana");
 const p3 = Promise.resolve("🍇 Grape");
 
