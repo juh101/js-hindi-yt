@@ -71,16 +71,22 @@ const username = promise4
 // console.log('this is ', username); //it is a Promise object.
 
 
-// const promise5 = new Promise(function (resolve, reject) {
-//     setTimeout(function () {
-//         let error = true;
-//         if (!error) {
-//             resolve({ username: "juhi", password: "123" })
-//         } else {
-//             reject('something went wrong :(')
-//         }
-//     }, 1000)
-// });
+const promise5 = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        let error = !true;
+        if (!error) {
+            resolve({ username: "juhi", password: "123" })
+        } else {
+            reject('something went wrong :(')
+        }
+    }, 1000)
+});
+
+promise5
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err))
+
+// ****************************OR
 
 // async function consumePromise5(){
 //     try {
@@ -89,10 +95,31 @@ const username = promise4
 //     } catch (error) {
 //         console.log(error);
 //     }
-
 // }
 
 // consumePromise5();
+
+//********************************************************************************** */
+// Promise.all() takes an array of promises, runs them in parallel, and returns a single Promise that:
+// ✅ Resolves when all promises succeed.
+// ❌ Rejects immediately if any one promise fails.
+Promise.all([promise4, promise5])
+  .then((results) => {
+    console.log(results); // An array of resolved values
+  })
+  .catch((error) => {
+    console.log("One of them failed:", error);
+  });
+
+  const p1 = Promise.resolve("🍎 Apple");
+const p2 = Promise.resolve("🍌 Banana");
+const p3 = Promise.resolve("🍇 Grape");
+
+Promise.all([p1, p2, p3])
+  .then((fruits) => {
+    console.log(fruits); // ['🍎 Apple', '🍌 Banana', '🍇 Grape']
+  });
+
 
 // async function getAllUsers() {
 //     try {
@@ -112,18 +139,18 @@ const username = promise4
 
 // getAllUsers()
 
-fetch('https://jsonplaceholder.typicode.com/users')
-.then((response) => {
-    //console.log(response);
-})
-.catch(() => console.log(console.error()));
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then((response) => {
+//     //console.log(response);
+// })
+// .catch(() => console.log(console.error()));
 
-fetch('https://api.github.com/users/hiteshchoudhary')
-.then((response) => {
-    return response.json()
-})
-.then((data) => {
-    console.log(data);
-})
-.catch(() => console.log(error));
+// fetch('https://api.github.com/users/hiteshchoudhary')
+// .then((response) => {
+//     return response.json()
+// })
+// .then((data) => {
+//     console.log(data);
+// })
+// .catch(() => console.log(error));
 
