@@ -84,3 +84,4 @@ console.log(username.trueLength()); // 6
 
 // let myChannel = "   chai   ";
 // console.log(myChannel.trueLength()); // 4
+
