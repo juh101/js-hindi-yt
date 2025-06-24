@@ -40,6 +40,5 @@ console.log(Object.keys(chai)); // Will not show 'name' as enumerable is false
 for (let [key, value] of Object.entries(chai)) {
     // Will not show 'name' as enumerable is false  
     console.log(`${key} : ${value}`);
-
 }
 
