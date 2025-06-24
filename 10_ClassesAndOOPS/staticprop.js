@@ -39,3 +39,4 @@ class MathHelper {
 }
 
 console.log(`square of 5 is: ${MathHelper.square(5)}`); // ✅ 25
+
