@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur Chai</title>
+</head>
+<body style="background-color: rgb(49, 47, 47); color: aliceblue;">
+    <h1>hello</h1>
+    Lexical scoping (also called static scoping) means that a variable’s scope is determined by where it is written in the code, not by where it is called from.
+    Lexical scope means JavaScript "looks upward in code" to find variables, based on where functions are written, not where they're called.
+    <p>Closure (function remembers its outer variables even after the outer function is done)</p>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+    
+<script>
+    function init() {
+        let name = "Mozilla"; 
+        function displayName() {
+            console.log(name); 
+        }
+        displayName();
+    }
+    init();
+    //closure
+    function outer(){
+        let count = 0;
+        function inner(){
+            count++;
+            console.log(count);
+        }
+        return inner
+    }
+    const counter = outer();
+    //Exactly! You're indirectly calling inner() — but with a powerful twist: it remembers 
+    // everything from outer(), even though outer() has already finished running.
+    counter();
+    counter();
+    counter();
+    
+    
+</script>
+
+<script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor= 'orange'
+    // }
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor= 'green'
+    // }
+
+    function clickHandler(color){
+            // document.body.style.backgroundColor = `${color}`
+
+            return function(){
+                document.body.style.backgroundColor = `${color}`
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange")
+        document.getElementById('green').onclick = clickHandler("green")
+
+</script>
+</html>
