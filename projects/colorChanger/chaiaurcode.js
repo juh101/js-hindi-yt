@@ -9,7 +9,7 @@ buttons.forEach(function (item) {
     const colorbg = e.target.id
     console.log(colorbg)
     document.body.style.backgroundColor=
-    document.body.style.backgroundColor === 'white' ? colorbg : 'white'
+    document.body.style.backgroundColor === colorbg ? 'white' : colorbg
   });
 });
 
